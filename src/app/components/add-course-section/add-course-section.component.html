@@ -1,0 +1,64 @@
+<div>
+<!--  adding notes section -->
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+
+      <div class="form-group">
+        <label for="note_title">Note Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="note_title"
+          required
+          [(ngModel)]="courseSection.course_name"
+          name="note_title"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="created_at">Created At</label>
+        <input
+          type="datetime-local"
+          class="form-control"
+          id="created_at"
+          required
+          [(ngModel)]="courseSection.created_at"
+          name="created_at"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="note_category">Note Category</label>
+        <input
+          type="text"
+          class="form-control"
+          id="note_category"
+          required
+          [(ngModel)]="courseSection.uuid"
+          name="note_categoty"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="note_content">Note Content</label>
+        <input
+          type="text"
+          class="form-control"
+          id="note_content"
+          required
+          [(ngModel)]="courseSection.uuid"
+          name="note_content"
+        />
+      </div>
+
+
+
+
+      <button (click)="saveCourseSection()" class="btn btn-success">Submit</button>
+    </div>
+    <div *ngIf="submitted">
+      <h4>Your note was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newCourseSection()">Add</button>
+    </div>
+  </div>
+</div>
